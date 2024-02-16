@@ -1,4 +1,4 @@
-let mensaje = "hola mundo";
+let mensaje = "carlos carlos";
 
 console.log(mensaje);
 
@@ -29,12 +29,25 @@ function codificar(mensaje) {
 }
 
 function decodificar(mensaje){
-    let indice=0
-    while (indice>=0){
-    indice = mensaje.indexOf('ober');
-    console.log(indice);
-    mensaje[indice]
-}
+   
+    while(mensaje.indexOf("ober") !== -1){
+        mensaje=mensaje.replace("ober","o");
+    }
+    while(mensaje.indexOf("enter") !== -1){
+        mensaje=mensaje.replace("enter","e");
+    }
+    while(mensaje.indexOf("imes") !== -1){
+        mensaje=mensaje.replace("imes","i");
+    }
+    while(mensaje.indexOf("ai") !== -1){
+        mensaje=mensaje.replace("ai","a");
+    }
+    while(mensaje.indexOf("ufat") !== -1){
+        mensaje=mensaje.replace("ufat","u");
+    }
+
+    console.log(mensaje);
+    return;
 
 }
 codificar(mensaje);
