@@ -1,11 +1,15 @@
-let mensaje = "carlos carlos";
+function asignarTextoElemento(elemento, texto) {
+    let elementoHTML = document.querySelector(elemento);
+    elementoHTML.innerHTML = texto;
+    return;
+}
 
-console.log(mensaje);
-
-function codificar(mensaje) {
+function codificar() {
+    let mensaje = document.getElementById('mensaje').value;
     let tamaño_mensaje= mensaje.length;
-    console.log(tamaño_mensaje);
     let mensaje_codificado = "";
+    console.log(mensaje);
+    console.log(tamaño_mensaje);
     for (let i = 0; i < tamaño_mensaje; i++) {
         console.log(mensaje[i]);
         if (mensaje[i]=="e"){
@@ -23,31 +27,31 @@ function codificar(mensaje) {
         }
         
       }
-    console.log(mensaje_codificado);
-    decodificar(mensaje_codificado);
-    return;
+      asignarTextoElemento('p',mensaje_codificado);
+    return ;
 }
 
-function decodificar(mensaje){
-   
-    while(mensaje.indexOf("ober") !== -1){
-        mensaje=mensaje.replace("ober","o");
+function decodificar(){
+    let mensaje_decodificado = document.getElementById('mensaje').value;
+    while(mensaje_decodificado.indexOf("ober") !== -1){
+        mensaje_decodificado=mensaje_decodificado.replace("ober","o");
     }
-    while(mensaje.indexOf("enter") !== -1){
-        mensaje=mensaje.replace("enter","e");
+    while(mensaje_decodificado.indexOf("enter") !== -1){
+        mensaje_decodificado=mensaje_decodificado.replace("enter","e");
     }
-    while(mensaje.indexOf("imes") !== -1){
-        mensaje=mensaje.replace("imes","i");
+    while(mensaje_decodificado.indexOf("imes") !== -1){
+        mensaje_decodificado=mensaje_decodificado.replace("imes","i");
     }
-    while(mensaje.indexOf("ai") !== -1){
-        mensaje=mensaje.replace("ai","a");
+    while(mensaje_decodificado.indexOf("ai") !== -1){
+        mensaje_decodificado=mensaje_decodificado.replace("ai","a");
     }
-    while(mensaje.indexOf("ufat") !== -1){
-        mensaje=mensaje.replace("ufat","u");
+    while(mensaje_decodificado.indexOf("ufat") !== -1){
+        mensaje_decodificado=mensaje_decodificado.replace("ufat","u");
     }
-
-    console.log(mensaje);
+    asignarTextoElemento('p',mensaje_decodificado);
     return;
 
 }
-codificar(mensaje);
+
+
+

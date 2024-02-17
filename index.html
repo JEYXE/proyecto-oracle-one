@@ -1,6 +1,7 @@
 <!DOCTYPE HTML>
 
 <html lang="es">
+
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width"> 
@@ -12,12 +13,13 @@
             <h1>Encriptador y desencriptador</h1>
         </Header>
         <main>
-            <form>
-                <label for="mensaje">Mensaje</label>
-                <textarea cols="70" rows="10" id="mensaje" class="input-padron" required></textarea>
-                <input type="submit" value="Encriptar" class="enviar">
-                <input type="submit" value="Desencriptar" class="enviar">
-            </form>
+            
+            <label for="mensaje">Mensaje</label>
+            <textarea cols="70" rows="10" id="mensaje" class="input-padron" required></textarea>
+            <p></p>
+            <button onclick="codificar();" class="container__boton">Encriptar</button>
+            <button onclick="decodificar();" class="container__boton" id="reiniciar">Desencriptar</button>
+            
         </main>
     </body>
     <script src="code.js"></script>
