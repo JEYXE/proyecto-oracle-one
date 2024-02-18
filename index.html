@@ -3,25 +3,53 @@
 <html lang="es">
 
     <head>
+
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width"> 
         <title>Encriptador/Desencriptador</title>
         <link rel="stylesheet" href="reset.css">
+        <link rel="stylesheet" href="style.css">
+
     </head>
     <body>
+
         <Header>
-            <h1>Encriptador y desencriptador</h1>
+            <div id="header">
+                
+                <img src="img/logo.png" alt="Logo">
+                    <h1>Encriptador y desencriptador</h1>
+                
+            </div>
         </Header>
+
         <main>
+
+            <div class="principal">
+
+            <textarea cols="20 " rows="10" id="mensaje" placeholder="Coloca tu mensaje" ></textarea>
+            <button onclick="codificar();" id="codificar">Encriptar</button>
+            <button onclick="decodificar();" id="decodificar">Desencriptar</button> 
+    
+            </div>
+
+            <div class="Resultado">
             
-            <label for="mensaje">Mensaje</label>
-            <textarea cols="70" rows="10" id="mensaje" class="input-padron" required></textarea>
-            <p></p>
-            <button onclick="codificar();" class="container__boton">Encriptar</button>
-            <button onclick="decodificar();" class="container__boton" id="reiniciar">Desencriptar</button>
-            
+            <p>prueba</p>
+
+            </div>
+                        
         </main>
+
+        <footer>
+            <div id="footer">
+            <img src="img/logo.png">
+            <p>&copy Copyright Proyecto - 2024</p>
+            </div>
+        </footer>
+
     </body>
+
     <script src="code.js"></script>
+
 </html>
 
