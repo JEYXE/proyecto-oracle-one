@@ -27,15 +27,15 @@
             <div class="principal">
 
             <textarea cols="20 " rows="10" id="mensaje" placeholder="Coloca tu mensaje" ></textarea>
-            <button onclick="codificar();" id="codificar">Encriptar</button>
-            <button onclick="decodificar();" id="decodificar">Desencriptar</button> 
+            <button onclick="codificar();" id="codificar" disabled>Encriptar</button>
+            <button onclick="decodificar();" id="decodificar" disabled>Desencriptar</button> 
     
             </div>
 
             <div class="Resultado">
             
-            <p>prueba</p>
-
+            <p id="resultado">Acá aparecera tu mensaje encriptado</p>
+            <button onclick="copiarAlPortapapeles('resultado')" id="copiar" disabled>Copiar</button>
             </div>
                         
         </main>

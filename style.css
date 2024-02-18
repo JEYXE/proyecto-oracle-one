@@ -31,16 +31,15 @@ main{
     margin: 1%;
     width: 50%;
 }
-.Resultado{
-    padding: 1%;
-    margin: 1%;
-    width: 50%;
-}
+
 textarea{
     padding: 1%;
     margin: 1%;
     width: 100%;
     display: block;
+    color:#4457CF;
+    border-color:#4457CF;
+    font-size:2vw;
 }
 
 #codificar{
@@ -49,16 +48,39 @@ textarea{
     margin: 1%;
     background: #4457CF;
     color: #FEFEFE;
+    font-size:2vw;
 }
 
 #decodificar{
     width: 40%;
     padding: 1%;
     margin: 1%;
-    background:#C955C0;
+    background: #4457CF;
     color: #FEFEFE;
+    font-size:2vw;
 }
-
+.Resultado{
+    padding: 1%;
+    margin: 1%;
+    width: 50%;
+}
+p {
+    padding: 1%;
+    margin: 1%;
+    color:#C955C0;
+    border-style: solid;
+    border-width: 1px;
+    font-size:2vw;
+}
+#copiar{
+    width: 40%;
+    padding: 1%;
+    margin: 1%;
+    background: #C955C0;
+    color: #FEFEFE;
+    font-size:2vw;
+    align-items: center;
+}
 footer{
     background: #C955C0;
     width: 100%;

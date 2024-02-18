@@ -6,6 +6,7 @@ function asignarTextoElemento(elemento, texto) {
 
 function codificar() {
     let mensaje = document.getElementById('mensaje').value;
+    mensaje=mensaje.toLowerCase()
     let tamaño_mensaje= mensaje.length;
     let mensaje_codificado = "";
     console.log(mensaje);
@@ -28,11 +29,16 @@ function codificar() {
         
       }
       asignarTextoElemento('p',mensaje_codificado);
+      document.getElementById("mensaje").value = "";
+      document.querySelector('#copiar').disabled = false;
+      activacion();
+
     return ;
 }
 
 function decodificar(){
     let mensaje_decodificado = document.getElementById('mensaje').value;
+    mensaje_decodificado=mensaje_decodificado.toLowerCase()
     while(mensaje_decodificado.indexOf("ober") !== -1){
         mensaje_decodificado=mensaje_decodificado.replace("ober","o");
     }
@@ -49,9 +55,32 @@ function decodificar(){
         mensaje_decodificado=mensaje_decodificado.replace("ufat","u");
     }
     asignarTextoElemento('p',mensaje_decodificado);
+    document.getElementById("mensaje").value = "";
+    document.querySelector('#copiar').disabled = false;
+    activacion();
     return;
 
 }
 
+document.getElementById('mensaje').addEventListener('input', activacion);
 
 
+function activacion(){
+    if (document.querySelector('#mensaje').value === '') {
+        document.querySelector('#codificar').disabled = true;
+        document.querySelector('#decodificar').disabled = true;
+      } else {
+        document.querySelector('#codificar').disabled = false;
+        document.querySelector('#decodificar').disabled = false;
+        }
+    return;
+}
+
+function copiarAlPortapapeles(id_elemento) {
+    var aux = document.createElement("input");
+    aux.setAttribute("value", document.getElementById(id_elemento).innerHTML);
+    document.body.appendChild(aux);
+    aux.select();
+    document.execCommand("copy");
+    document.body.removeChild(aux);
+  }
