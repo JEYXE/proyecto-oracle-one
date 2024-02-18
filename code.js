@@ -28,7 +28,7 @@ function codificar() {
         }
         
       }
-      asignarTextoElemento('p',mensaje_codificado);
+      asignarTextoElemento('#resultado',mensaje_codificado);
       document.getElementById("mensaje").value = "";
       document.querySelector('#copiar').disabled = false;
       activacion();
@@ -54,7 +54,7 @@ function decodificar(){
     while(mensaje_decodificado.indexOf("ufat") !== -1){
         mensaje_decodificado=mensaje_decodificado.replace("ufat","u");
     }
-    asignarTextoElemento('p',mensaje_decodificado);
+    asignarTextoElemento('#resultado',mensaje_decodificado);
     document.getElementById("mensaje").value = "";
     document.querySelector('#copiar').disabled = false;
     activacion();
