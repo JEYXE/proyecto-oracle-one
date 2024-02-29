@@ -66,6 +66,7 @@ async function copiarAlPortapapeles() {
             if (resultado.state == "granted" || resultado.state == "prompt") {
                 alert("¡Permiso de escritura concedido!");
             }
+            
         });
 }
 
