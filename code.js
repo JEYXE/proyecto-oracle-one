@@ -1,71 +1,46 @@
-function asignarTextoElemento(elemento, texto) {
-    let elementoHTML = document.querySelector(elemento);
-    elementoHTML.innerHTML = texto;
-    return;
-}
-
 function codificar() {
     let mensaje = document.getElementById('mensaje').value;
-    mensaje=mensaje.toLowerCase()
     let tamaño_mensaje= mensaje.length;
     let mensaje_codificado = "";
-    console.log(mensaje);
-    console.log(tamaño_mensaje);
     for (let i = 0; i < tamaño_mensaje; i++) {
-        console.log(mensaje[i]);
-        if (mensaje[i]=="e"|mensaje[i]=="é"){
+        if (mensaje[i]=="e"){
             mensaje_codificado += "enter";
-        } else if(mensaje[i]=="i"|mensaje[i]=="í"){
+        } else if(mensaje[i]=="i"){
             mensaje_codificado += "imes";
-        } else if(mensaje[i]=="a"|mensaje[i]=="á"){
+        } else if(mensaje[i]=="a"){
             mensaje_codificado += "ai";
-        } else if(mensaje[i]=="o"|mensaje[i]=="ó"){
+        } else if(mensaje[i]=="o"){
             mensaje_codificado += "ober";
-        } else if(mensaje[i]=="u"|mensaje[i]=="ú"){
+        } else if(mensaje[i]=="u"){
             mensaje_codificado += "ufat";
         } else {
             mensaje_codificado += mensaje[i] 
-        }
-        
+        }   
       }
-      asignarTextoElemento('#resultado',mensaje_codificado);
+      document.getElementById("resultado").value = mensaje_codificado;
       document.getElementById("mensaje").value = "";
       document.querySelector('#copiar').disabled = false;
       activacion();
-
     return ;
 }
 
 function decodificar(){
     let mensaje_decodificado = document.getElementById('mensaje').value;
-    mensaje_decodificado=mensaje_decodificado.toLowerCase()
-    while(mensaje_decodificado.indexOf("ober") !== -1){
-        mensaje_decodificado=mensaje_decodificado.replace("ober","o");
-    }
-    while(mensaje_decodificado.indexOf("enter") !== -1){
-        mensaje_decodificado=mensaje_decodificado.replace("enter","e");
-    }
-    while(mensaje_decodificado.indexOf("imes") !== -1){
-        mensaje_decodificado=mensaje_decodificado.replace("imes","i");
-    }
-    while(mensaje_decodificado.indexOf("ai") !== -1){
-        mensaje_decodificado=mensaje_decodificado.replace("ai","a");
-    }
-    while(mensaje_decodificado.indexOf("ufat") !== -1){
-        mensaje_decodificado=mensaje_decodificado.replace("ufat","u");
-    }
-    asignarTextoElemento('#resultado',mensaje_decodificado);
+    mensaje_decodificado=mensaje_decodificado.replaceAll("ai","a");
+    mensaje_decodificado=mensaje_decodificado.replaceAll("enter","e");
+    mensaje_decodificado=mensaje_decodificado.replaceAll("imes","i");
+    mensaje_decodificado=mensaje_decodificado.replaceAll("ober","o");
+    mensaje_decodificado=mensaje_decodificado.replaceAll("ufat","u");
+    document.getElementById("resultado").value =mensaje_decodificado;
     document.getElementById("mensaje").value = "";
     document.querySelector('#copiar').disabled = false;
     activacion();
     return;
-
 }
 
 document.getElementById('mensaje').addEventListener('input', activacion);
 
-
-function activacion(){
+function activacion()  {
     if (document.querySelector('#mensaje').value === '') {
         document.querySelector('#codificar').disabled = true;
         document.querySelector('#decodificar').disabled = true;
@@ -76,11 +51,21 @@ function activacion(){
     return;
 }
 
-function copiarAlPortapapeles(id_elemento) {
-    var aux = document.createElement("input");
-    aux.setAttribute("value", document.getElementById(id_elemento).innerHTML);
-    document.body.appendChild(aux);
-    aux.select();
-    document.execCommand("copy");
-    document.body.removeChild(aux);
-  }
+
+async function copiarAlPortapapeles() {
+    try {
+        await navigator.clipboard.writeText('Este es el texto a copiar');
+        console.log('Contenido copiado al portapapeles');
+        /* Resuelto - texto copiado al portapapeles con éxito */
+      } catch (err) {
+        console.error('Error al copiar: ', err);
+        /* Rechazado - fallo al copiar el texto al portapapeles */
+      }
+      navigator.permissions.query({ name: "write-on-clipboard" })
+        .then((resultado) => {
+            if (resultado.state == "granted" || resultado.state == "prompt") {
+                alert("¡Permiso de escritura concedido!");
+            }
+        });
+}
+

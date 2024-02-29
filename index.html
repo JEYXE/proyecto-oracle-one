@@ -6,27 +6,26 @@
 
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width"> 
-        <title>Encriptador/Desencriptador</title>
+        <title>Encriptador de texto</title>
         <link rel="stylesheet" href="reset.css">
         <link rel="stylesheet" href="style.css">
 
     </head>
+
     <body>
 
         <Header>
-            <div id="header">
+               
+            <img src="img/logo.png" alt="Logo">
+            <h1 id="titulo" >ENCRIPTADOR DE TEXTO</h1>
                 
-                <img src="img/logo.png" alt="Logo">
-                    <h1>Encriptador y desencriptador</h1>
-                
-            </div>
         </Header>
 
         <main>
 
             <div class="principal">
 
-            <textarea cols="20 " rows="10" id="mensaje" placeholder="Coloca tu mensaje" ></textarea>
+            <textarea id="mensaje" placeholder="Coloca tu mensaje" ></textarea>
             <button onclick="codificar();" id="codificar" disabled>Encriptar</button>
             <button onclick="decodificar();" id="decodificar" disabled>Desencriptar</button> 
     
@@ -34,17 +33,18 @@
 
             <div class="Resultado">
             
-            <textarea cols="20 " rows="10" id="resultado" placeholder="Acá aparecerá tu mensaje encriptado" disabled></textarea>
-            <button onclick="copiarAlPortapapeles('resultado')" id="copiar" disabled>Copiar</button>
+            <textarea id="resultado" placeholder="Acá aparecerá tu mensaje encriptado" disabled></textarea>
+            <button onclick="copiarAlPortapapeles();" id="copiar" disabled>Copiar</button>
+
             </div>
                         
         </main>
 
         <footer>
-            <div id="footer">
-            <img src="img/logo.png">
+
+            <img src="img/logo.png" alt="Logo">
             <p>&copy Copyright Proyecto - 2024</p>
-            </div>
+
         </footer>
 
     </body>
