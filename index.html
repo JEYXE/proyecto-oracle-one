@@ -17,23 +17,25 @@
         <Header>
                
             <img src="img/logo.png" alt="Logo">
-            <h1 id="titulo" >ENCRIPTADOR DE TEXTO</h1>
+            <h1>ENCRIPTADOR DE TEXTO</h1>
                 
         </Header>
 
         <main>
 
-            <div class="principal">
+            <div class="input">
 
-            <textarea id="mensaje" placeholder="Coloca tu mensaje" ></textarea>
+            <textarea id="mensaje_input" placeholder="Coloca tu mensaje" ></textarea>
+            <p id="parrafo_input">&#x26a0 Solo letras en minúsculas y sin acentos</p>
             <button onclick="codificar();" id="codificar" disabled>Encriptar</button>
             <button onclick="decodificar();" id="decodificar" disabled>Desencriptar</button> 
     
             </div>
 
-            <div class="Resultado">
+            <div class="output">
             
-            <textarea id="resultado" placeholder="Acá aparecerá tu mensaje encriptado" disabled></textarea>
+            <textarea id="mensaje_output" placeholder="Acá aparecerá tu mensaje encriptado o desencriptado" disabled></textarea>
+            <p id="parrafo_output">vacio</p>
             <button onclick="copiarAlPortapapeles();" id="copiar" disabled>Copiar</button>
 
             </div>
@@ -43,7 +45,7 @@
         <footer>
 
             <img src="img/logo.png" alt="Logo">
-            <p>&copy Copyright Proyecto - 2024</p>
+            <p>&copy Copyright Encriptador de texto - 2024</p>
 
         </footer>
 

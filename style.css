@@ -2,146 +2,206 @@ header {
     background: #4457CF;
     display: flex;
     align-items: center;
+    height: 20vh;
 }
 header img{
-    padding: 1%;
-    margin: 1%;
-    width: 5%;
+    height: 20vh;
     display: inline;
 }
 h1{
-    padding: 1%;
-    margin: 1%;
+    margin: 0.5%;
     width: 100%;
+    height: 15vh;
     display: inline;
     color: #FEFEFE;
-    font-size:200%;
+    vertical-align: middle;
     font-family: fantasy;
+    font-size: 10vh;
 }
 main{
     width: 100%;
     display: flex;
+    height: 70vh;
 }
-.principal{
+.input{
     padding: 1%;
     margin:1%;
     width: 50%;
+    height: 100%;
 }
 
-#mensaje{
+#mensaje_input{
     padding: 1%;
     margin: 1%;
     width: 100%;
-    height: 285px;
+    height: 50%;
     display: block;
     color:#4457CF;
     border-color:#4457CF;
     font-size:2vw;
 }
-#mensaje:focus {
+#mensaje_input:focus {
     outline: none !important;
     border:1px solid #4457CF;
     }
+#parrafo_input{
+    padding: 1%;
+    display: block;
+    width: 100%;
+    height: 5%;
+    color: #4457CF;
+    font-size: 2vh;
+}
 
 #codificar{
     width: 40%;
+    height: 15%;
     padding: 1%;
-    margin: 1%;
     background: #4457CF;
     color: #FEFEFE;
-    font-size:2vw;
+    font-size:5vh;
 }
 
 #decodificar{
     width: 40%;
+    height: 15%;
     padding: 1%;
-    margin: 1%;
     background: #4457CF;
     color: #FEFEFE;
-    font-size:2vw;
+    font-size:5vh;
 }
-.Resultado{
+.output{
     padding: 1%;
     margin: 1%;
     width: 50%;
+    height: 100%;
 }
-#resultado{
+#mensaje_output{
     padding: 1%;
     margin: 1%;
     width: 100%;
-    height: 285px;
+    height: 50%;
     display: block;
     color:#C955C0;
     border-color:#C955C0;
     font-size:2vw;
 }
-#resultado:focus {
+#mensaje_output:focus {
     outline: none !important;
     border:1px solid #C955C0;
     }
+#parrafo_output{
+    padding: 1%;
+    display: block;
+    width: 100%;
+    height: 5%;
+    color: #ffffff;
+    font-size:2vh;
+}
 #copiar{
     width: 40%;
     padding: 1%;
-    margin: 1%;
+    height: 15%;
     background: #C955C0;
     color: #FEFEFE;
-    font-size:2vw;
-    align-items: center;
+    font-size:5vh;
 }
 footer{
     background: #C955C0;
+    height: 10vh;
+    width: 100%;
 }
 footer img{
-    padding: 1%;
-    width: 6%;
+
+    height:  5vh;
     display: block;
     margin-left: auto;
     margin-right: auto;
 }
-p{
-    padding: 1%;
+footer p{
     display: block;
     margin-left: auto;
     margin-right: auto;
-    width: 50%;
+    width: 100%;
     text-align: center;
     color: #FEFEFE;
     font-size:100%;
 }
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 400px) {
     /* For mobile phones: */
+    header {
+        background: #4457CF;
+        display: flex;
+        align-items: center;
+        height: 10vh;
+    }
+    header img{
+        height: 100%;
+        display: inline;
+    }
     h1{
-
-        font-size:100%;;
-
+        margin: 0.5%;
+        height: 100%;
+        display: inline;
+        color: #FEFEFE;
+        font-family: fantasy;
+        margin-top: 2vh;
+        font-size:4vh;
     }
     main{
+        height: 80vh;
         width: 100%;
         display: block;
     }
-    .principal{
+    .input{
         padding: 1%;
         margin:1%;
         width: 90%;
+        height: 50%;
     }
-    .Resultado{
+    .output{
         padding: 1%;
         margin: 1%;
         width: 90%;
+        height: 50%;
 
     }
-    #resultado{
+    #mensaje_input{
 
-        height: 240px;
+        height: 50%;
     }
-    #mensaje{
+    #parrafo_input{
 
-        height: 240px;
-    }
-    p{
+        height: 10%;
+        font-size: 100%;
 
-        font-size:50%;
- 
     }
-  }
-  
+    #codificar{
+
+        height: 15%;
+        font-size:2vh;
+
+    }
+    #decodificar{
+
+        height: 15%;
+        font-size:2vh;
+
+    }
+    #mensaje_output{
+
+        height: 50%;
+    }
+    #parrafo_output{
+
+        height: 10%;
+        font-size: 100%;
+
+    }
+    #copiar{
+
+        height: 15%;
+        font-size:2vh;
+
+    }
+}
